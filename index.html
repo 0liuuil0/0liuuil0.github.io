@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>管理员登录 - 地球Online服务器</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrapper"><!--这是确保footer位于页面最底部-->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home" onclick="IdontlikeJavaScripts(); return false;">地球Online服务器管理系统</a></li>
+            <li><a href="#about" onclick="version(); return false;">About</a></li>
+            <!--li><a href="#services">Services</a></li-->
+            <!--li><a href="#contact">Contact</a></li-->
+            <li class="ml-auto">
+                <a href="#language" onclick="showMaintenanceMessage(); return false;">Language</a>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="login-box">
+        <span class="LoginTitle">欢迎登录地球Online个人用户管理系统！</span>
+        
+        <!-- 账户类型下拉框 -->
+        <form>
+            <label for="account-type" class="textstyle">账号类型&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <select id="account-type" name="account-type" required class="selectbox">
+                <option value="admin" disabled>管理员</option>
+                <option value="test-account" disabled>测试账户</option>
+                <option value="temporary-account" disabled>临时账户</option>
+                <option value="personal-admin">个人管理员</option>
+                <option value="other">其他</option>
+            </select>
+            
+            <div class="input-group1">
+                <span class="account-type-note">*已自动检测您的账户类型，请核对确认无误。</span>
+            </div>
+            
+            <div class="input-group">
+                <label for="username" class="usernamestyle">账 号</label>
+                <input type="text" id="username" name="username" class="input" required>
+            </div>
+            <div class="input-group">
+                <label for="password" class="passwordstyle">密 码</label>
+                <input type="password" id="password" name="password" class="input" required>
+            </div>
+            
+        </form>
+        <div>
+            
+                <a href="#" class="small" onclick="showMaintenanceMessage(); return false;">注册账号</a> &nbsp;
+                <a href="#" class="small" onclick="showMaintenanceMessage(); return false;">忘记密码?</a>
+            
+        </div>
+        <button class="login-btn" onclick="showPopup()">登 录</button>
+    </section>
+    
+    <!-- 浮窗元素 -->
+    <div id="popup-window" class="popup hidden">
+        <div class="popup-content">
+            <span class="close-btn" onclick="hidePopup()">&times;</span>
+            <h1>《地球Online个人用户管理系统保密协议》</h1>
+            <p id="popup-text">
+                
+                
+<article>
+    <!-- 重要声明 -->
+    <div class="important-statement">
+        <h2>重要声明</h2>
+        <p>本协议由地球Online网络服务有限公司（中国）（以下简称“公司”）制定，是个人用户管理员与公司之间就个人信息及后台数据的管理、维护和保密所达成的法律约束性文件。请仔细阅读以下条款，接受后即视为您同意履行本协议的所有义务。</p>
+    </div>
+
+    <!-- 第一条：协议目的 -->
+    <section>
+        <h2>第一条：协议目的</h2>
+        <p>本协议旨在规范个人用户管理员对公司系统数据的访问和使用行为，确保个人信息及后台数据的安全性、完整性和保密性。</p>
+    </section>
+
+    <!-- 第二条：保密义务 -->
+    <section>
+        <h2>第二条：保密义务</h2>
+
+        <h3>1. 信息范围</h3>
+        <p>管理员所接触的一切公司系统数据，包括但不限于：用户个人信息、后台日志、任务记录、权限分配等，均属于公司保密信息。</p>
+
+        <h3>2. 保密承诺</h3>
+        <p>管理员必须采取一切合理措施保护上述信息不被泄露、篡改或非法使用，不得将信息泄露给任何未经授权的个人或组织。</p>
+
+        <h3>3. 行为限制</h3>
+        <p>管理员不得擅自更改公司系统数据、权限配置或其他信息，任何修改行为须经过公司授权并留存记录。</p>
+    </section>
+
+    <!-- 第三条：数据访问权限 -->
+    <section>
+        <h2>第三条：数据访问权限</h2>
+
+        <h3>1. 管理员的访问权限</h3>
+        <p>管理员的访问权限仅限于其授权范围内的功能和数据，任何超范围访问行为均视为违规。</p>
+
+        <h3>2. 禁止绕过权限限制</h3>
+        <p>禁止通过技术手段试图绕过权限限制或获取非授权数据。</p>
+    </section>
+
+    <!-- 第四条：违规责任 -->
+    <section>
+        <h2>第四条：违规责任</h2>
+
+        <h3>1. 违规后果</h3>
+        <p>如管理员违反本协议，导致数据泄露、系统损害或其他严重后果，公司将立即冻结其权限，并追究相应法律责任。</p>
+
+        <h3>2. 经济损失赔偿</h3>
+        <p>因管理员泄密或擅自更改数据而引发的经济损失，公司有权要求全额赔偿，具体金额以实际损失为准。</p>
+
+        <h3>3. 法律责任</h3>
+        <p>管理员的违规行为如涉及违法，公司将依法移交司法机关处理，追究刑事责任。</p>
+    </section>
+
+    <!-- 第五条：协议期限 -->
+    <section>
+        <h2>第五条：协议期限</h2>
+
+        <h3>1. 生效时间</h3>
+        <p>本协议自管理员签署时生效，长期有效。</p>
+
+        <h3>2. 持续保密义务</h3>
+        <p>管理员权限被终止或协议解除后，保密义务仍持续生效，不得因权限终止而泄露或滥用信息。</p>
+    </section>
+
+    <!-- 第六条：争议解决 -->
+    <section>
+        <h2>第六条：争议解决</h2>
+
+        <h3>1. 适用法律</h3>
+        <p>本协议适用用户所在地区的法律。</p>
+
+        <h3 class="important-statement">2. 争议处理</h3>
+        <p class="important-statement">因本协议引发的争议，应友好协商解决；协商不成的，由公司所在地或用户所在地的法律规定管辖。</p>
+    </section>
+
+    <!-- 最终解释权 -->
+    <p class="important-statement">本协议由地球Online网络服务有限公司（中国）拥有最终解释权，签署即同意，违约必追究。</p>
+</article>
+
+            </p>
+        </div>
+        <div class="footer">
+            <button id="agree-btn" class="disabled" disabled>同意</button>
+        </div>
+    </div>
+</div>
+    
+
+    <!-- 引用外部 JavaScript 文件 -->
+    <script src="scripts.js"></script>
+
+    <footer class="footer">
+        <p>&#x24B8; B.C.3910 - A.D.<span id="currentYear">2025</span> 地球Online服务有限公司（中国）。保留所有权利。</p>
+        <!-- 其他内容 -->
+        
+        <p>
+            <a href="/privacy-policy" onclick="plzDontKeepFindingBug(); return false;">隐私政策</a> |
+            <a href="/terms-of-service" onclick="plzDontKeepFindingBug(); return false;">服务条款</a>
+        </p>
+    </footer>
+</body>
+
+</html>

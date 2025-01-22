@@ -1,0 +1,251 @@
+/* 全局样式 */
+body,
+html {
+    font-family: "Source Han Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F8F9FA;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    /* 灰色 */
+    margin: 20px 0;
+    /* 上下间距 */
+}
+
+/* 导航栏样式 */
+.navbar {
+    background-color: #0078D4;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.navbar ul>li {
+    margin-left: 0px;
+}
+
+.navbar ul>li.ml-auto {
+    margin-left: auto;
+}
+
+.navbar li a {
+    display: block;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar li a:hover {
+    background-color: #0D47A1;
+    color: white;
+}
+
+/* 主容器样式 */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-top: 56px;
+    /* 根据导航栏的高度调整 */
+}
+
+/* 内容区域 */
+.container {
+    display: flex;
+    flex-grow: 1;
+    padding-bottom: 50px;
+    /* 为底部留出空间 */
+}
+
+/* 侧边栏样式 */
+.sidebar {
+    position: fixed;
+    top: 50px;
+    /* 根据导航栏高度调整 */
+    bottom: 0;
+    left: 0;
+    width: 10%;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    border-right: 1px solid #ccc;
+    overflow-y: auto;
+    z-index: 998;
+    /* 确保它在主内容之下 */
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    display: block;
+    transition: background-color 0.3s;
+    font-weight: 600;
+    text-align: center;
+    /* 加粗字体 */
+}
+
+.sidebar nav ul li a:hover {
+    background-color: #d7e6f3;
+    border-radius: 8px;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.0);
+}
+
+.sidebar .bottom-item {
+    margin-top: auto;
+}
+
+/* 主内容区样式 */
+main {
+    flex-grow: 1;
+    padding: 50px;
+    margin-left: 10%;
+    /* 为侧边栏留出空间 */
+}
+
+/* 保留的红色字体样式 */
+.container .sidebar .update {
+    color: #e40000;
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+
+}
+
+.first {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    padding-top: 3%;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+
+/* 默认状态下 span 样式 */
+.highlight {
+    background-color: black;
+    color: black;
+    padding: 2px 4px;
+    display: inline-block;
+    transition: background-color 0.15s ease;
+}
+
+/* 当鼠标悬停在 span 上时的样式 */
+.highlight:hover {
+    background-color: #F8F9FA;
+    color: black;
+}
+
+.callme {
+    width: 20%;
+    height: 20%;
+}
+
+.email {
+    color: #0078D4;
+}
+
+.email:hover {
+    color: #0D47A1;
+}
+
+/* 网页底部版权声明 */
+.footer {
+    background-color: transparent;
+    color: #888888;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer a {
+    color: #0078D4;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.update-log {
+    /*font-family: Arial, sans-serif;*/
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+.update-log header h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+.update-log section {
+    margin-bottom: 20px;
+}
+
+.update-log footer {
+    font-style: italic;
+    margin-top: 20px;
+    border-top: 1px dashed #ccc;
+    padding-top: 10px;
+}
+
+.update-log ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.update-log p strong {
+    color: #2980b9;
+}

@@ -1,0 +1,387 @@
+/* 使用思源黑体字体 */
+body,
+html {
+    font-family: "Source Han Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F8F9FA;
+    padding-top: 16px;
+    /* 根据导航栏的高度调整 */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+
+/* 导航栏样式 */
+.navbar {
+    background-color: #0078D4;
+    /* 设置背景颜色 */
+    overflow: hidden;
+    position: fixed;
+    /* 固定位置 */
+    top: 0;
+    /* 置顶 */
+    width: 100%;
+    /* 宽度为100% */
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    /* 默认左对齐 */
+    align-items: center;
+    /* 垂直居中 */
+}
+
+.navbar ul>li {
+    margin-left: 0px;
+    /* 导航栏各个元素间距 */
+}
+
+.navbar ul>li.ml-auto {
+    margin-left: auto;
+    /* 强制这个元素及其之后的元素靠右 */
+}
+
+.navbar li a {
+    display: block;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* 浮窗样式 */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 300px;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 1001;
+    overflow: hidden;
+}
+
+.popup.hidden {
+    display: none;
+}
+
+.popup-content {
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.popup-content p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+
+
+
+.navbar li a:hover {
+    background-color: #0D47A1;
+    color: white;
+    border-radius: 5px;
+}
+
+/* 登录框样式 */
+.login-box {
+    background-color: #f1f1f1;
+    /* 背景颜色 */
+    height: 350px;
+    /* 设置高度 */
+    width: 400px;
+    /* 设置宽度 */
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.1);
+    /* 添加阴影效果 */
+    border-radius: 20px;
+    /* 圆角边框 */
+    margin: 90px auto;
+    /* 根据导航栏的高度调整顶部间距，并水平居中 */
+    padding-left: 20px;
+    /* 添加左侧内边距 */
+    box-sizing: border-box;
+    /* 确保内边距不增加宽度 */
+    display: flex;
+    /* 使用Flexbox布局 */
+    flex-direction: column;
+    /* 子元素垂直排列 */
+    justify-content: center;
+    /* 垂直居中 */
+    align-items: center;
+    /* 水平居中 */
+}
+
+/* 登录标题样式 */
+.LoginTitle {
+    color: black;
+    /* 设置适当的颜色 */
+    display: block;
+    /* 确保 span 行为像块级元素 */
+    font-size: 18px;
+    /* 设置适当的字体大小 */
+    padding: 20px;
+    /* 确保有足够的内边距 */
+    font-weight: 600;
+    /* 字体稍微粗点 */
+    text-align: center;
+    /* 居中文本 */
+}
+
+/* 登录按钮样式 */
+.login-btn {
+    background-color: #0078D4;
+    /* 按钮背景颜色 */
+    border: none;
+    /* 移除默认边框 */
+    border-radius: 8px;
+    /* 圆角边框 */
+    box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.2);
+    /* 添加阴影效果 */
+    font-weight: 500;
+    /* 字体稍微粗点 */
+    font-size: 20px;
+    /* 设置字体大小 */
+    color: white;
+    /* 文字颜色 */
+    padding: 1% 4%;
+    /* 简化内边距 */
+    margin-top: 3%;
+    /* 添加顶部间距 */
+}
+
+.login-btn:hover {
+    background-color: #0D47A1;
+    color: white;
+}
+
+/* 设置表单样式 */
+form {
+    width: 100%;
+    /* 确保表单宽度适应父容器 */
+    padding-left: 30%;
+}
+
+/* 每个输入组在同一行 */
+.input-group1 {
+    display: flex;
+    align-items: center;
+    /* 垂直居中对齐 */
+    gap: 8px;
+    /* 调整标签和输入框之间的间距 */
+    margin-bottom: 16px;
+    /* 添加底部间距以分隔不同组 */
+
+}
+
+.usernamestyle {
+    font-weight: 600;
+}
+
+.passwordstyle {
+    font-weight: 600;
+}
+
+.textstyle {
+    font-weight: 600;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    /* 垂直居中对齐 */
+    gap: 8px;
+    /* 调整标签和输入框之间的间距 */
+    margin-bottom: 16px;
+    /* 添加底部间距以分隔不同组 */
+
+}
+
+
+
+/* 设置输入框的宽度（可选） */
+.login-box .input-group .input {
+    flex: 1;
+    min-width: 150px;
+    max-width: 200px;
+    height: 30px;
+    padding: 8px;
+    background-color: white;
+    /* 输入框背景色 */
+    border: 1px solid #ced4da;
+    /* 边框样式 */
+    border-radius: 8px;
+    /* 圆角 */
+    box-sizing: border-box;
+    /* 确保尺寸包含内边距和边框 */
+    font-size: 16px;
+    /* 文字大小 */
+    font-weight: normal;
+    /* 字体粗细 */
+    color: #495057;
+    /* 文本颜色 */
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.login-box .selectbox {
+    flex: 1;
+    min-width: 150px;
+    max-width: 300px;
+    height: 35px;
+    padding: 8px;
+    background-color: white;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #495057;
+
+}
+
+.account-type-note {
+    font-size: smaller;
+    color: #F44336;
+}
+
+.small {
+    font-size: smaller;
+    color: rgb(117, 117, 117);
+}
+
+/* 浮窗样式 */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 1001;
+    overflow: hidden;
+}
+
+.popup.hidden {
+    display: none;
+}
+
+.popup-content {
+    height: calc(100% - 60px);
+    /* 减去底部按钮的高度 */
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.popup-content p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.close-btn {
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.footer {
+    height: 60px;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #ddd;
+}
+
+#agree-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: not-allowed;
+    transition: all 0.3s ease;
+}
+
+#agree-btn.disabled {
+    background-color: #ccc;
+    color: black;
+    font-weight: 600;
+}
+
+#agree-btn.enabled {
+    background-color: #0078D4;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* 改变重要声明的颜色 */
+.important-statement {
+    color: #e40000;
+}
+
+
+/* 网页底部版权声明 */
+.wrapper {
+    min-height: calc(100vh - 50px);
+    /* 减去 footer 的高度 */
+    margin-bottom: -50px;
+    /* footer 的高度 */
+}
+
+.footer {
+    /* 移除背景颜色 */
+    background-color: transparent;
+    /* 或者直接注释掉这行 */
+
+    /* 移除边框 */
+    border: none;
+    flex-shrink: 0;
+    color: #888888;
+    text-align: center;
+    padding: 0px 0;
+    font-size: 14px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+.footer a {
+    color: #0078D4;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
